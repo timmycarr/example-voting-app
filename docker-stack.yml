@@ -24,7 +24,7 @@ services:
       placement:
         constraints: [node.role == manager]
   vote:
-    image: dockersamples/examplevotingapp_vote:before
+    image: docker-de-dtrloadb-9e59cfgacx59-1322325277.us-east-1.elb.amazonaws.com/ahead/vote:1.0
     ports:
       - 5000:80
     networks:
@@ -38,7 +38,7 @@ services:
       restart_policy:
         condition: on-failure
   result:
-    image: dockersamples/examplevotingapp_result:before
+    image: docker-de-dtrloadb-9e59cfgacx59-1322325277.us-east-1.elb.amazonaws.com/ahead/result:1.0
     ports:
       - 5001:80
     networks:
@@ -54,7 +54,7 @@ services:
         condition: on-failure
 
   worker:
-    image: dockersamples/examplevotingapp_worker
+    image: docker-de-dtrloadb-9e59cfgacx59-1322325277.us-east-1.elb.amazonaws.com/ahead/worker:1.0
     networks:
       - frontend
       - backend
